@@ -1,0 +1,90 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.4em;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 3em;
+    margin: 2em 0;
+}
+
+.title {
+    width: 100%;
+}
+
+#content {
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-around;
+    width: 80vw;
+}
+
+h1 {
+    font-size: 2.25rem;
+}
+
+h2 {
+    font-size: 1.6rem;
+    margin-bottom: 0.4rem;
+}
+
+.navbar {
+    width: 100%;
+}
+.navbar a {
+    color: inherit;
+    text-decoration: inherit;
+}
+.navbar > ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width:100%;
+}
+.navbar li {
+    padding: 1em 0;
+    text-align: center;
+    display: block;
+    transition-duration: 0.5s;
+}
+.navbar li:hover {
+    cursor: pointer;
+    color: grey;
+}
+
+.banner {
+    width: 100%;
+    height: 450px;
+    margin-bottom: 2em;
+    object-fit: cover;
+}
+
+main {
+    margin: 50px 0;
+}
+main h2 {
+    text-align: center;
+}
+main p {
+    margin-left: auto;
+    margin-right: auto;
+    width: 30em;
+}
+
+footer {
+    display: flex;
+    height: 20vh;
+    padding-top: 2em;
+}
+footer div {
+    margin: 0 5em 0 0;
+}
