@@ -2,11 +2,13 @@
   "name": "restaurant_page",
   "version": "1.0.0",
   "description": "",
-  "main": "script.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --progress --mode=production",
+    "watch": "webpack --progress --watch"
+},
+  "author": "tramio",
   "license": "ISC",
   "devDependencies": {
     "webpack": "^5.58.2",

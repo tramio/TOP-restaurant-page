@@ -1,1 +1,3 @@
-console.log("hey");
+import loadHeader from "./modules/canvas";
+
+loadHeader();
