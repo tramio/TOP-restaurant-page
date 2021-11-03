@@ -1,4 +1,5 @@
 import Homepage from "./homepage";
+import About from "./about";
 
 const Header = (() => {
     const createTitle = () => {
@@ -15,15 +16,17 @@ const Header = (() => {
     }
     const createNavbarTabs = () => {
         const ul = document.createElement("ul");
-        const tabs = ["Startseite", "Speisekarte", "Shop", "Über uns", "Blog", "Kontakt"];
-        tabs.forEach(tab => {
+        const tabs = [["Startseite", Homepage.load], ["Speisekarte"], ["Shop"], ["Über uns", About.load], ["Blog"], ["Kontakt"]];
+        for (let i = 0; i < tabs.length; i++) {
             const li = document.createElement("li");
-            const link = document.createElement("a");
-            link.textContent = tab;
-            link.setAttribute("href", "#");
-            li.appendChild(link);
+            li.textContent = tabs[i][0];
+            li.addEventListener("click", () => {
+                const main = document.querySelector("main");
+                main.textContent = "";
+                tabs[i][1]();
+            })
             ul.appendChild(li);
-        });
+        }
         return ul;
     }
     const load = () => {
