@@ -1,3 +1,3 @@
-import canvas from "./modules/canvas";
+import Canvas from "./modules/canvas";
 
-canvas.load();
+Canvas.load();

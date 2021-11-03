@@ -30,54 +30,56 @@ function createNavbarTabs() {
     return ul;
 }
 
-function create(element) {
+function createElement(element) {
     return document.createElement(`${element}`);
 }
-function createFooter() {
-    const footer = create("footer");
-    footer.appendChild(createOpeningHoursDiv());
-    footer.appendChild(createAddressDiv());
-    footer.appendChild(createContactDiv());
-    return footer;
-}
-function createOpeningHoursDiv() {
-    const h2 = create("h2");
-    h2.textContent = "Öffnungszeiten";
-    const paragraph = create("p");
-    paragraph.innerHTML = "Mo bis Fr 07:30 - 18:30 Uhr<br>Sa 09:00 - 18:30 Uhr";
-    const div = create("div");
-    div.appendChild(h2);
-    div.appendChild(paragraph);
-    return div;
-}
-function createAddressDiv() {
-    const h2 = create("h2");
-    h2.textContent = "Adresse";
-    const paragraph = create("p");
-    paragraph.innerHTML = "<em>Café Castelli e Comete</em><br>Guter-Kaffee Allee 136<br>20099 Hamburg";
-    const div = create("div");
-    div.appendChild(h2);
-    div.appendChild(paragraph);
-    return div;
-}
-function createContactDiv() {
-    const h2 = create("h2");
-    h2.textContent = "Kontakt";
-    const paragraph = create("p");
-    paragraph.textContent = "Telefon: +49 (xxx) xxxx-xxx";
-    const paragraph2 = create("p");
-    paragraph2.textContent = "E-Mail: hallo@castelliecomete.de";
-    const div = create("div");
-    div.appendChild(h2);
-    div.appendChild(paragraph);
-    div.appendChild(paragraph2);
-    return div;
-}
+const Footer = (() => {
+    const footer = createElement("footer");
+    const Div = (() => {
+        const createDiv = (title) => {
+            const div = createElement("div");
+            div.setAttribute("id", title);
+            return div;
+        }
+        const createH2 = (title) => {
+            const h2 = createElement("h2");
+            h2.textContent = title;
+            return h2;
+        }
+        const createParagraph = (innerHTML) => {
+            const paragraph = createElement("p");
+            paragraph.innerHTML = innerHTML;
+            return paragraph;
+        }
+        const load = (title, innerHTML) => {
+            const div = createDiv();
+            div.appendChild(createH2(title));
+            div.appendChild(createParagraph(innerHTML));
+            return div;
+        }
+        return {
+            load,
+        };
+    })();
+    const _loadDivs = () => {
+        const divs = [["Öffnungszeiten", "Mo bis Fr 07:30 - 18:30 Uhr<br>Sa 09:00 - 18:30 Uhr"],["Adresse", "<em>Café Castelli e Comete</em><br>Guter-Kaffee Allee 136<br>20099 Hamburg"], ["Kontakt", "Telefon: +49 (xxx) xxxx-xxx<br>E-Mail: hallo@castelliecomete.de"]]
+        for (let i = 0; i < divs.length; i++) {
+            footer.appendChild(Div.load(divs[i][0], divs[i][1]));
+        }
+    }
+    const load = () => {
+        _loadDivs();
+        return footer;
+    }
+    return {
+        load,
+    }
+})();
 
-const canvas = (() => {
+const Canvas = (() => {
     const content = document.getElementById("content");
     const _loadHeader = () => content.appendChild(createHeader());
-    const _loadFooter = () => content.appendChild(createFooter());
+    const _loadFooter = () => content.appendChild(Footer.load());
     const load = () => {
         _loadHeader();
         _loadFooter();
@@ -87,4 +89,4 @@ const canvas = (() => {
     }
 })();
 
-export default canvas;
+export default Canvas;
