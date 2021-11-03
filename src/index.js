@@ -1,3 +1,3 @@
-import loadHeader from "./modules/canvas";
+import canvas from "./modules/canvas";
 
-loadHeader();
+canvas.load();
