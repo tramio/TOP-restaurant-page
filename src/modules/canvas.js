@@ -1,53 +1,55 @@
-function createHeader() {
-    const header = document.createElement("header");
-    header.appendChild(createTitle());
-    header.appendChild(createNavbar());
-    return header;
-}
-function createTitle() {
-    const title = document.createElement("h1");
-    title.classList.add("title");
-    title.textContent = "Café Castelli e Comete";
-    return title;
-}
-function createNavbar() {
-    const navbar = document.createElement("nav");
-    navbar.classList.add("navbar");
-    navbar.appendChild(createNavbarTabs());
-    return navbar;
-}
-function createNavbarTabs() {
-    const ul = document.createElement("ul");
-    const tabs = ["Startseite", "Speisekarte", "Shop", "Über uns", "Blog", "Kontakt"];
-    tabs.forEach(tab => {
-        const li = document.createElement("li");
-        const link = document.createElement("a");
-        link.textContent = tab;
-        link.setAttribute("href", "#");
-        li.appendChild(link);
-        ul.appendChild(li);
-    });
-    return ul;
-}
-
-function createElement(element) {
-    return document.createElement(`${element}`);
-}
+const Header = (() => {
+    const createTitle = () => {
+        const title = document.createElement("h1");
+        title.classList.add("title");
+        title.textContent = "Café Castelli e Comete";
+        return title;
+    }
+    const createNavbar = () => {
+        const navbar = document.createElement("nav");
+        navbar.classList.add("navbar");
+        navbar.appendChild(createNavbarTabs());
+        return navbar;
+    }
+    const createNavbarTabs = () => {
+        const ul = document.createElement("ul");
+        const tabs = ["Startseite", "Speisekarte", "Shop", "Über uns", "Blog", "Kontakt"];
+        tabs.forEach(tab => {
+            const li = document.createElement("li");
+            const link = document.createElement("a");
+            link.textContent = tab;
+            link.setAttribute("href", "#");
+            li.appendChild(link);
+            ul.appendChild(li);
+        });
+        return ul;
+    }
+    const load = () => {
+        const header = document.createElement("header");
+        header.appendChild(createTitle());
+        header.appendChild(createNavbar());
+        return header;
+    }
+    return {
+        load,
+    }
+})();
+    
 const Footer = (() => {
-    const footer = createElement("footer");
+    const footer = document.createElement("footer");
     const Div = (() => {
         const createDiv = (title) => {
-            const div = createElement("div");
+            const div = document.createElement("div");
             div.setAttribute("id", title);
             return div;
         }
         const createH2 = (title) => {
-            const h2 = createElement("h2");
+            const h2 = document.createElement("h2");
             h2.textContent = title;
             return h2;
         }
         const createParagraph = (innerHTML) => {
-            const paragraph = createElement("p");
+            const paragraph = document.createElement("p");
             paragraph.innerHTML = innerHTML;
             return paragraph;
         }
@@ -78,7 +80,7 @@ const Footer = (() => {
 
 const Canvas = (() => {
     const content = document.getElementById("content");
-    const _loadHeader = () => content.appendChild(createHeader());
+    const _loadHeader = () => content.appendChild(Header.load());
     const _loadFooter = () => content.appendChild(Footer.load());
     const load = () => {
         _loadHeader();
