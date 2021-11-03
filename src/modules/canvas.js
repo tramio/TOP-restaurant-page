@@ -1,3 +1,5 @@
+import Homepage from "./homepage";
+
 const Header = (() => {
     const createTitle = () => {
         const title = document.createElement("h1");
@@ -35,12 +37,21 @@ const Header = (() => {
     }
 })();
     
+const Main = (() => {
+    const load = () => {
+        const main = document.createElement("main");
+        return main;
+    }
+    return {
+        load,
+    }
+})();
+
 const Footer = (() => {
     const footer = document.createElement("footer");
     const Div = (() => {
         const createDiv = (title) => {
             const div = document.createElement("div");
-            div.setAttribute("id", title);
             return div;
         }
         const createH2 = (title) => {
@@ -81,10 +92,13 @@ const Footer = (() => {
 const Canvas = (() => {
     const content = document.getElementById("content");
     const _loadHeader = () => content.appendChild(Header.load());
+    const _loadMain = () => content.appendChild(Main.load());
     const _loadFooter = () => content.appendChild(Footer.load());
     const load = () => {
         _loadHeader();
+        _loadMain();
         _loadFooter();
+        Homepage.load();
     }
     return {
         load,
