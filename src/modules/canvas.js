@@ -1,5 +1,6 @@
 import Homepage from "./homepage";
 import About from "./about";
+import Shop from "./shop";
 
 const Header = (() => {
     const createTitle = () => {
@@ -16,7 +17,7 @@ const Header = (() => {
     }
     const createNavbarTabs = () => {
         const ul = document.createElement("ul");
-        const tabs = [["Startseite", Homepage.load], ["Speisekarte"], ["Shop"], ["Über uns", About.load], ["Blog"], ["Kontakt"]];
+        const tabs = [["Startseite", Homepage.load], ["Speisekarte"], ["Shop", Shop.load], ["Über uns", About.load], ["Blog"], ["Kontakt"]];
         for (let i = 0; i < tabs.length; i++) {
             const li = document.createElement("li");
             li.textContent = tabs[i][0];

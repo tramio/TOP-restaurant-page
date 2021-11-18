@@ -139,3 +139,19 @@ footer div {
     .about-barista-text {
         margin: 30px;
     }
+
+/* SHOP PAGE */
+.articles {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+}
+.article-name {
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: 600;
+}
+.shop-picture {
+    max-width: 20vw;
+}
