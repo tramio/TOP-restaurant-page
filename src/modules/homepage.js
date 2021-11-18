@@ -1,7 +1,9 @@
+import Banner from "../images/banner-by-charisse-kenion.jpg";
+
 const Homepage = (()=> {
     const createBanner = () => {
         const banner = document.createElement("img");
-        banner.src = "../images/banner-by-charisse-kenion.jpg";
+        banner.src = Banner;
         banner.classList.add("banner");
         return banner;
     };
@@ -15,11 +17,22 @@ const Homepage = (()=> {
         mainText.innerHTML = "☑ Kaffeespezialitäten aus der ganzen Welt <br>☑ Frische hausgemachte Kuchen (täglich!) <br>☑ Tolle Baristas... und einen Hund! 🐶";
         return mainText;
     };
+    const createContainer = (className) => {
+        const container = document.createElement("div");
+        container.classList.add(`${className}`);
+        return container;
+    }
+    const buildHomepage = () => {
+        const homepage = createContainer("homepage");
+        homepage.classList.add("page");
+        homepage.appendChild(createBanner());
+        homepage.appendChild(createMainTitle());
+        homepage.appendChild(createMainText());
+        return homepage;
+    }
     const load = () => {
         const main = document.querySelector("main");
-        main.appendChild(createBanner());
-        main.appendChild(createMainTitle());
-        main.appendChild(createMainText());
+        main.appendChild(buildHomepage());
     }
     return {
         load,

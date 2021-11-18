@@ -88,3 +88,45 @@ footer {
 footer div {
     margin: 0 5em 0 0;
 }
+
+.page {
+    animation: fadeIn 2s;
+}
+@keyframes fadeIn {
+    0% {
+      opacity: 0.4;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+
+/* ABOUT PAGE */
+    .about {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .about-barista {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .about-div-1,
+    .about-div-2 {
+        width: 50%
+    }
+
+    .about-picture {
+        margin: 10px;
+        width: 100%;
+    }
+    .about-barista-text {
+        background-color: grey;
+        opacity: 0.6;
+        height: 100%;
+    }
