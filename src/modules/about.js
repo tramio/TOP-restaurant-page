@@ -2,63 +2,26 @@ import myTeamPicture from "../images/team-by-pixdeluxe.jpg";
 import myBaristaPicture from "../images/barista-by-bradley-pisney.jpg";
 
 const About = (() => {
-    const _createPicture = (className) => {
+    const createPicture = (className) => {
         const picture = document.createElement("img");
         picture.classList.add("about-picture", `${className}`);
         return picture;
     }
-    const _createTeamPicture = () => {
-        const teamPicture = _createPicture("team-picture");
-        teamPicture.src = myTeamPicture;
-        return teamPicture;
-    }
-    const _createBaristaPicture = () => {
-        const baristaPicture = _createPicture("barista-picture");
-        baristaPicture.src = myBaristaPicture;
-        return baristaPicture;
-    }
-    const _createContainer = (className) => {
+    const createContainer = (className) => {
         const container = document.createElement("div");
         container.classList.add(`${className}`);
         return container;
     }
-    const _createTitle = () => {
+    const createTitle = (title) => {
         const h1 = document.createElement("h1");
-        h1.textContent = "Über uns";
+        h1.textContent = title;
         return h1;
     };
-    const _createText = () => {
-        const paragraph = document.createElement("p");
-        paragraph.textContent = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel praesentium inventore, dolorem ducimus facere error exercitationem! A explicabo tempore saepe iure, excepturi cupiditate quisquam atque reiciendis, sunt illo consequuntur impedit.";
-        return paragraph;
-    }
-    const _buildBaristaDiv = () => {
-        const div = _createContainer("about-barista");
-        div.appendChild(_createBaristaPictureDiv());
-        div.appendChild(_createBaristaTextDiv());
-        return div;
-    }
-    const _createBaristaPictureDiv = () => {
-        const div = _createContainer("about-barista-picture");
-        div.appendChild(_createBaristaPicture());
-        return div;
-    }
-    const _createBaristaTextDiv = () => {
-        const div = _createContainer("about-barista-text");
-        div.appendChild(_createTitle());
-        div.appendChild(_createText());
-        return div;
-    }    
-    const _buildTeamDiv = () => {
-        const div = _createContainer("about-team")
-        div.appendChild(_createTeamPicture());
-        return div;
-    }
     const _buildAbout = () => {
-        const about = _createContainer("about");
+        const about = createContainer("about");
         about.classList.add("page");
-        about.appendChild(_buildBaristaDiv());
-        about.appendChild(_buildTeamDiv());
+        about.appendChild(BaristaSection.build());
+        about.appendChild(TeamSection.build());
         return about;
     };
     const load = () => {
@@ -66,7 +29,94 @@ const About = (() => {
         main.appendChild(_buildAbout());
     }
     return {
+        createPicture,
+        createContainer,
+        createTitle,
         load,
+    }
+})();
+
+const BaristaSection = (() => {
+    const createPictureDiv = () => {
+        return About.createContainer("about-barista-picture");
+    }
+    const createPicture = () => {
+        const picture = About.createPicture("barista-picture");
+        picture.src = myBaristaPicture;
+        return picture;
+    }
+    const buildPictureDiv = () => {
+        const div = createPictureDiv();
+        div.appendChild(createPicture());
+        return div;
+    }
+    const createTextDiv = () => {
+        return About.createContainer("about-barista-text");
+    }
+    const createTextTitle = () => {
+        return About.createTitle("Wir sind Castelli e Comete");
+    }
+    const createTextContent = () => {
+        const text = document.createElement("p");
+        text.textContent = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel praesentium inventore, dolorem ducimus facere error exercitationem! A explicabo tempore saepe iure, excepturi cupiditate quisquam atque reiciendis, sunt illo consequuntur impedit.";
+        return text;
+    }
+    const buildTextDiv = () => {
+        const div = createTextDiv();
+        div.appendChild(createTextTitle());
+        div.appendChild(createTextContent());
+        return div;
+    }
+    const build = () => {
+        const div = About.createContainer("about-barista");
+        div.appendChild(buildPictureDiv());
+        div.appendChild(buildTextDiv());
+        return div;
+    }
+    return {
+        build,
+    }
+})();
+
+const TeamSection = (() => {
+    const createPictureDiv = () => {
+        return About.createContainer("about-team-picture");
+    }
+    const createPicture = () => {
+        const picture = About.createPicture("team-picture");
+        picture.src = myTeamPicture;
+        return picture;
+    }
+    const buildPictureDiv = () => {
+        const div = createPictureDiv();
+        div.appendChild(createPicture());
+        return div;
+    }
+    const createTextDiv = () => {
+        return About.createContainer("about-team-text");
+    }
+    const createTextTitle = () => {
+        return About.createTitle("Unser Engagement");
+    }
+    const createTextContent = () => {
+        const text = document.createElement("p");
+        text.textContent = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel praesentium inventore, dolorem ducimus facere error exercitationem! A explicabo tempore saepe iure, excepturi cupiditate quisquam atque reiciendis, sunt illo consequuntur impedit.";
+        return text;
+    }
+    const buildTextDiv = () => {
+        const div = createTextDiv();
+        div.appendChild(createTextTitle());
+        div.appendChild(createTextContent());
+        return div;
+    }
+    const build = () => {
+        const div = About.createContainer("about-team");
+        div.appendChild(buildPictureDiv());
+        div.appendChild(buildTextDiv());
+        return div;
+    }
+    return {
+        build,
     }
 })();
 
