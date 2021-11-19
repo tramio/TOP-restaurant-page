@@ -1,9 +1,17 @@
+@font-face {
+    font-family: 'MyFont';
+    src:    url("./fonts/Raleway-Regular.woff2") format("woff2"),
+            url("./fonts/Raleway-SemiBold.woff2") format("woff2"),
+            url("./fonts/Raleway-Bold.woff2") format("woff2");
+    font-weight: 600;
+    font-style: normal;
+}
 body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: 'Raleway', sans-serif;
+    font-family: "Raleway";
     line-height: 1.6em;
     text-align: justify;
 }
