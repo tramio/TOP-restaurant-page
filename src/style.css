@@ -13,7 +13,10 @@ header {
     align-items: center;
     width: 100%;
     height: 3em;
-    margin: 2em 0;
+    padding: 2em 0;
+    border-bottom: solid;
+    border-width: thin;
+    border-color: rgb(190, 190, 190);
 }
 
 .title {
@@ -33,7 +36,6 @@ h1 {
     text-align: left;
     font-size: 2.25rem;
     line-height: 2.5rem;
-    /* margin-bottom: 0.5rem; */
 }
 
 h2 {
@@ -53,6 +55,7 @@ h2 {
     flex-direction: row;
     justify-content: space-between;
     width:100%;
+    padding: 0;
 }
 .navbar li {
     padding: 1em 0;
@@ -141,17 +144,62 @@ footer div {
     }
 
 /* SHOP PAGE */
-.articles {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 80%;
-}
-.article-name {
-    font-size: inherit;
-    line-height: inherit;
-    font-weight: 600;
-}
-.shop-picture {
-    max-width: 20vw;
-}
+    .articles {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 80%;
+    }
+    .article-name {
+        font-size: inherit;
+        line-height: inherit;
+        font-weight: 600;
+    }
+    .shop-picture {
+        max-width: 20vw;
+    }
+
+    .page-title {
+        text-align: center;
+        font-size: 2rem;
+    }
+
+/* CONTACT PAGE */
+    .contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    form {
+        width: 20em;
+    }
+    .label,
+    input,
+    textarea {
+        width: 100%;
+        padding: 0;
+    }
+    .label {
+        display: inline-block;
+    }
+    input {
+        height: 1.5rem;
+    }
+    textarea {
+        height: 10em;
+    }
+    .submit-button {
+        height: 2em;
+        font-size: inherit;
+        font-family: inherit;
+        font-weight: 500;
+        background-color: rgb(190, 190, 190);
+        color: white;
+        transition-duration: 0.5s;
+        cursor: pointer;
+        border: none;
+    }
+    .submit-button:hover {
+        background-color: rgb(154, 172, 182);
+    }
