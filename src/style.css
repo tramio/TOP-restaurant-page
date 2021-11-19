@@ -203,3 +203,28 @@ footer div {
     .submit-button:hover {
         background-color: rgb(154, 172, 182);
     }
+
+/* MENU PAGE */
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.menu-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.content-div {
+    display: flex;
+    justify-content: flex-end;
+    width: 30vw;
+}
+.menu-paragraph-prices {
+    width: 100%;
+    text-align: right;
+}
+.menu-paragraph-names {
+    width: 100%;
+}
