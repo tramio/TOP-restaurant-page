@@ -40,7 +40,7 @@ h1 {
 
 h2 {
     font-size: 1.6rem;
-    margin-bottom: 0.4rem;
+    margin: 0;
 }
 
 .navbar {
@@ -91,6 +91,9 @@ footer {
     display: flex;
     height: 20vh;
     padding-top: 2em;
+    border-top: solid;
+    border-width: thin;
+    border-color: rgb(190, 190, 190);
 }
 footer div {
     margin: 0 5em 0 0;
@@ -110,6 +113,12 @@ footer div {
       opacity: 1;
     }
 }
+
+/* HOMEPAGE */
+    .homepage-paragraph {
+        width: 30vw;
+        text-align: center;
+    }
 
 /* ABOUT PAGE */
     .about {

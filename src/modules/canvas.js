@@ -19,7 +19,7 @@ const Header = (() => {
     }
     const createNavbarTabs = () => {
         const ul = document.createElement("ul");
-        const tabs = [["Startseite", Homepage.load], ["Speisekarte", Menu.load], ["Shop", Shop.load], ["Über uns", About.load], ["Blog"], ["Kontakt", Contact.load]];
+        const tabs = [["Startseite", Homepage.load], ["Speisekarte", Menu.load], ["Shop", Shop.load], ["Über uns", About.load], ["Kontakt", Contact.load]];
         for (let i = 0; i < tabs.length; i++) {
             const li = document.createElement("li");
             li.textContent = tabs[i][0];

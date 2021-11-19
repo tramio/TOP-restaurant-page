@@ -2,8 +2,6 @@ import Brewer from "../images/brewer.jpg"
 import Grinder from "../images/grinder.jpg"
 import Scale from "../images/scale.jpg"
 
-// Prêt à push, mais d'abord remplacer les images par les miennes
-
 const Shop = (() => {
     const createArticleDiv = () => {
         const div = document.createElement("div");
@@ -27,15 +25,8 @@ const Shop = (() => {
         price.textContent = articlePrice;
         return price;
     }
-    const buildBrewer = () => {
-        const div = createArticleDiv();
-        div.appendChild(createArticleImage(Brewer));
-        div.appendChild(createArticleName("Brewer"));
-        div.appendChild(createArticlePrice("59,00 €"));
-        return div;
-    }
     const buildArticles = () => {
-        const articles = [[Brewer, "Brewer", "59,00 €"], [Grinder, "Grinder", "229,00 €"], [Scale, "Scale", "39,00 €"]];
+        const articles = [[Brewer, "Aeropress Brewer", "39,90 €"], [Grinder, "Comandante Grinder", "279,90 €"], [Scale, "Acaia Lunar Scale", "299,90 €"]];
         let articlesDiv = document.createElement("div");
         articlesDiv.classList.add("articles");
         for (let i = 0; i < articles.length; i++) {

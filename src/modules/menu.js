@@ -26,7 +26,7 @@ const Page = (() => {
 })();
 
 const Products = (() => {
-    const products = [["Espresso", "1,90 €"], ["Espresso macchiato", "1,90 €"], ["Milchkaffee", "2,90 €"], ["Cappuccino", "3,20 €"], ["Flat white", "3,60 €"], ["Latte macchiato", "3,40 €"], ["Mokaccino", "3,20 €"], ["Heisse Schokolade", "3,20 €"], ["Chemex", "4,20 €"], ["Hario V60", "4,20 €"]];
+    const products = [["Espresso", "1,90 €"], ["Espresso macchiato", "1,90 €"], ["Espresso doppio", "2,90 €"], ["Milchkaffee", "2,90 €"], ["Cappuccino", "3,20 €"], ["Latte macchiato", "3,60 €"], ["Flat white", "3,60 €"], ["Mokaccino", "3,20 €"], ["Heiße Schokolade 🦉", "3,20 €"], ["Chemex", "4,20 €"], ["Hario V60", "4,20 €"]];
     const getFromProducts = (position) => {
         let newArray = [];
         for (let i = 0; i < products.length; i++) {
@@ -75,7 +75,7 @@ const Products = (() => {
     }
     const buildDrinksDiv = () => {
         const div = createMenuSection();
-        div.appendChild(createTitleDiv("Heisse Getränke"));
+        div.appendChild(createTitleDiv("Heiße Getränke"));
         div.appendChild(createContentDiv());
         const extraLine = document.createElement("p");
         extraLine.textContent = "Hafer-, Reis-, Haselnuss- oder Mandelmilch, sowie entkoffeinierte Alternativen stehen auch zur Verfügung. ☕";

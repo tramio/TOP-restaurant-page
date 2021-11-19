@@ -14,6 +14,7 @@ const Homepage = (()=> {
     };
     const createMainText = () => {
         const mainText = document.createElement("p");
+        mainText.classList.add("homepage-paragraph");
         mainText.innerHTML = "☑ Kaffeespezialitäten aus der ganzen Welt <br>☑ Frische hausgemachte Kuchen (täglich!) <br>☑ Tolle Baristas... und einen Hund! 🐶";
         return mainText;
     };

@@ -58,7 +58,7 @@ const BaristaSection = (() => {
     }
     const createTextContent = () => {
         const text = document.createElement("p");
-        text.textContent = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel praesentium inventore, dolorem ducimus facere error exercitationem! A explicabo tempore saepe iure, excepturi cupiditate quisquam atque reiciendis, sunt illo consequuntur impedit.";
+        text.textContent = "Lorem ipsum dolor sit amet. Quo quod internos aut magnam neque est fuga architecto ut galisum vero vel deleniti quaerat. Sed nesciunt laudantium in illo expedita sed amet nobis id sint nemo aut maiores consequatur. Aut molestiae nihil vel nihil labore eum molestias dolorem ea autem nostrum.";
         return text;
     }
     const buildTextDiv = () => {
@@ -100,7 +100,7 @@ const TeamSection = (() => {
     }
     const createTextContent = () => {
         const text = document.createElement("p");
-        text.textContent = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel praesentium inventore, dolorem ducimus facere error exercitationem! A explicabo tempore saepe iure, excepturi cupiditate quisquam atque reiciendis, sunt illo consequuntur impedit.";
+        text.textContent = "Id voluptatem voluptatem vel laborum perspiciatis fuga corrupti eum quaerat corrupti et aperiam laudantium. Non nemo incidunt ex molestiae architecto aut modi quae. Ea nesciunt reiciendis ex porro amet cum nemo repudiandae rem asperiores exercitationem est magni aliquid.";
         return text;
     }
     const buildTextDiv = () => {
